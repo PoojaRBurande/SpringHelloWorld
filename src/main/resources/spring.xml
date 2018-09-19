@@ -7,6 +7,7 @@ bean definitions here
 	<bean id="hello" class="HelloWorld">
 		<property name="message" value="Hello World!!!!!"></property>
 	</bean>
+	
 
 </beans> -->
 
@@ -17,9 +18,16 @@ bean definitions here
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
    http://www.springframework.org/schema/context
    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
-
-   <context:annotation-config/>
+	
+	
+   
+  <!--  <context:annotation-config/> -->
    <context:component-scan base-package="com.hello"></context:component-scan>
+   <context:component-scan base-package="com.constr"></context:component-scan>
+   
    <!-- bean definitions go here -->
+   <bean id="constructor" class="com.constr.Constructor">
+   		 <constructor-arg value="1" type="int"></constructor-arg>  
+   </bean>
 
 </beans>
