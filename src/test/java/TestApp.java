@@ -1,7 +1,9 @@
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.hello.Explore;
 import com.hello.HelloWorld;
+import com.hello.World;
 
 
 public class TestApp {
@@ -10,8 +12,13 @@ public class TestApp {
 			
 			ApplicationContext app = new ClassPathXmlApplicationContext("spring.xml");
 			HelloWorld hello = (HelloWorld) app.getBean("helloWorld");
-			System.out.println(hello.getMessage());
-			System.out.println("in testing Annotations");
+			hello.setMessage("Hie");
+			hello.enjoy();
+			
+			System.out.println("-----------------------");
+			
+			World wr=(Explore)app.getBean("explore");
+			wr.enjoy();
 	}
 
 }
